@@ -1,19 +1,20 @@
 # Report: Predict Bike Sharing Demand with AutoGluon Solution
-#### NAME HERE
+#### William Hyun
 
 ## Initial Training
 ### What did you realize when you tried to submit your predictions? What changes were needed to the output of the predictor to submit your results?
-TODO: Add your explanation
+The `datetime` column was not accepted, therefore I had to separate it into three different columns of year, month, and day. 
 
 ### What was the top ranked model that performed?
-TODO: Add your explanation
+The model with the split `datetime` column, eval_metric of `root_mean_squared_error`, preset of `best_quality`, and 120 second time limit was my best performing model. 
 
 ## Exploratory data analysis and feature creation
 ### What did the exploratory analysis find and how did you add additional features?
-TODO: Add your explanation
+Since I already did EDA by splitting the datetime, I had to choose a different category. 
+I saw in the histogram of the trian data that there were significantly more sales in months 1 and 12, so I re-divided the months into seasons (e.g. months 11, 12, and 1 being a group) and called it `season2`.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-TODO: Add your explanation
+My model performed worse after adding the new 
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
